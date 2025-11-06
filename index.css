@@ -1,0 +1,32 @@
+body{
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+
+}
+
+.navbar{
+display: flex;
+justify-content: center;
+align-items: center;
+    
+}
+
+
+#Submit{
+font-size: 20px;
+height: 50px;
+margin-top: 10px;
+margin-left: 80px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 10px;
+background-color: blueviolet;
+}
+
+.hidden{
+display: none;
+
+}
