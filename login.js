@@ -12,7 +12,7 @@ SUBMIT.addEventListener("click", function (e) {
 
   // we created these 2 variables bcs of inputs we had on login.html and this gets them and only shows theyr values in screen 
  const InputF = document.querySelector("#Fname").value;
- const InputL = document.querySelector("Lname").value;
+ const InputL = document.querySelector("#Lname").value;
  
  // first we use !storedUser to see if it works
 
@@ -23,7 +23,7 @@ return;
  
  // then we compare if the object data that was stored in localstroage and then when we parsed from previus page we compare if its same 
   if(InputF === storedUser.firstName && InputL === storedUser.lastName){
-alert("Please wait for verification");
+alert("Please wait for verification")
 setTimeout(() => {window.location.href = "final.html"},400);
 
  }
