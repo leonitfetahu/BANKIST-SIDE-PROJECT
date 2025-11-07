@@ -6,7 +6,7 @@ const navbar = document.querySelector(".navbar");
 Form.classList.add("hidden");
 
 //logic when user wants to start the app a
-let user = true;
+
 
 //when user clicks sign in
 Sign.addEventListener("click", function () {
@@ -14,21 +14,21 @@ Sign.addEventListener("click", function () {
   Form.classList.remove("hidden");
   log.classList.add("hidden");
 
-  if (user === true) {
-  }
+ 
 });
 
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
-  const firstname = document.querySelector("#Fname").value;
-  const lastname = document.querySelector("#Lname").value;
+  const inputFirst = document.querySelector("#Fname").value;
+  const inputLast = document.querySelector("#Lname").value;
+      //local storage name saved as an object
   const PERSON = {
-    firsName: firstname,
-    lastName: lastname,
+    firstName: Fname,
+    lastName: Lname,
     balance: 0,
   };
 
-  localStorage.setItem("SIGN IN", JSON.stringify(PERSON));
+  localStorage.setItem("SIGNIN", JSON.stringify(PERSON));
   alert("account created");
 
   setInterval(() => {
