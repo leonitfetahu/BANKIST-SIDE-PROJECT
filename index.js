@@ -23,8 +23,8 @@ Form.addEventListener("submit", function (e) {
   const inputLast = document.querySelector("#Lname").value;
       //local storage name saved as an object
   const PERSON = {
-    firstName: Fname,
-    lastName: Lname,
+    firstName: inputFirst,
+    lastName: inputLast,
     balance: 0,
   };
 
