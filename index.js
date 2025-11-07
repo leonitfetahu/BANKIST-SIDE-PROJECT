@@ -39,4 +39,5 @@ Form.addEventListener("submit", function (e) {
 log.addEventListener("click", function () {
   Form.classList.remove("hidden");
   Sign.classList.add("hidden");
+  log.classList.add("hidden");
 });
