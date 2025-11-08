@@ -24,13 +24,14 @@ return;
  // then we compare if the object data that was stored in localstroage and then when we parsed from previus page we compare if its same 
   if(InputF === storedUser.firstName && InputL === storedUser.lastName){
 alert("Please wait for verification")
-setTimeout(() => {window.location.href = "final.html"},400);
+setTimeout(() => {window.location.href = "final.html"},3000);
 
  }
 
 
 
 });
+
 
 
 
