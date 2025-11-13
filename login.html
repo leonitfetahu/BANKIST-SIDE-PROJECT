@@ -21,14 +21,14 @@
     <form id="signIN">
     <h2>LOG IN</h2>
         <label for="Fname" >FirstName:</label>
-        <input type="text" id="Fname"><br>
+        <input type="text" minlength="4"  required  id="Fname"><br>
         <br><br>
       
         <label for="Lname">LastName:</label>
-        <input type="text" id="Lname">
+        <input type="text" minlength="4"  id="Lname" required  >
 
-         <label for="password">Password:</label>
-        <input type="password" >
+         <label for="password">Password:</label> 
+        <input type="password" minlength="8" maxlength="12" required >
 
         <button id="Submit">Submit</button>
 
