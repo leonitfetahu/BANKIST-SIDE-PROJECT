@@ -23,15 +23,22 @@ Form.addEventListener("submit", function (e) {
   const inputLast = document.querySelector("#Lname").value;
       //local storage name saved as an object
   const PERSON = {
+    USER:{
     firstName: inputFirst,
     lastName: inputLast,
     balance: 0,
+    },
+    Account : {
+    Depozita: 0,
+    Money: 10000,
+    Bilanci: 0,
+}
   };
-
+  // setting up the object in localstorage with the name SIGNIN
   localStorage.setItem("SIGNIN", JSON.stringify(PERSON));
   alert("account created");
 
-  setInterval(() => {
+  setTimeout(() => {
     window.location.href = "login.html";
   }, 3000);
 });
