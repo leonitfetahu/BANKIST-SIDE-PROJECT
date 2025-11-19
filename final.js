@@ -5,29 +5,19 @@ const btnSend = document.querySelector("#Send");
 
 alert("verification completed");
 
-const Account = {
-Depozita: 0,
-Money: 10000,
-Bilanci: 0,
-}
-
-localStorage.setItem("Main", JSON.stringify(Account));
 
 
-balanceInput.value = Account.Money;
+ const storeed = JSON.parse(localStorage.getItem("SIGNIN"));
 
+ balanceInput.value = storeed.Account.Money;
 
-btnSend.addEventListener("click",function(){
-JSON.parse(localStorage.getItem("Main"));
+ btnSend.addEventListener("click", function(){
+const ruajtje = Number(depositInput.value);
+storeed.Account.Money -= ruajtje;
+balanceInput.value = storeed.Account.Money;
+localStorage.setItem("SIGNIN", JSON.stringify(storeed));
 
-const Ruaj = Number(depositInput.value);
-
-balanceInput.value = Account.Money;
-Account.Money -= Ruaj 
- localStorage.setItem("Main",JSON.stringify(Account));
-
-
-})
+ })
 
 
 const GOback = function(){

@@ -6,13 +6,14 @@ LOGin.classList.add("hidden");
 
 // get data from localStorage
 const storedUser = JSON.parse(localStorage.getItem("SIGNIN"));
+console.log(storedUser);
 
 SUBMIT.addEventListener("click", function (e) {
   e.preventDefault();
 
   // we created these 2 variables bcs of inputs we had on login.html and this gets them and only shows theyr values in screen 
- const InputF = document.querySelector("#Fname").value;
- const InputL = document.querySelector("#Lname").value;
+ const InputF = document.querySelector("#Fname").value.trim();
+ const InputL = document.querySelector("#Lname").value.trim();
  
  // first we use !storedUser to see if it works
 
@@ -22,7 +23,7 @@ return;
  }
  
  // then we compare if the object data that was stored in localstroage and then when we parsed from previus page we compare if its same 
-  if(InputF === storedUser.firstName && InputL === storedUser.lastName){
+  if(InputF === storedUser.USER.firstName && InputL === storedUser.USER.lastName){
 alert("Please wait for verification")
 setTimeout(() => {window.location.href = "final.html"},3000);
 
