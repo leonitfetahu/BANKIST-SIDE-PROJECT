@@ -34,6 +34,14 @@ Form.addEventListener("submit", function (e) {
     Bilanci: 0,
 }
   };
+
+  const storingS = JSON.parse(localStorage.getItem("SIGNIN"));
+
+  if(storingS&& storingS.USER.firstName === inputFirst && storingS.USER.lastName === inputLast){
+alert("There is an account with this credentials");
+return;
+
+  }
   // setting up the object in localstorage with the name SIGNIN
   localStorage.setItem("SIGNIN", JSON.stringify(PERSON));
   alert("account created");

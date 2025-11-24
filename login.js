@@ -29,6 +29,10 @@ setTimeout(() => {window.location.href = "final.html"},3000);
 
  }
 
+ else{
+alert("INCORRECT CREDENTIALS");
+
+ }
 
 
 });
