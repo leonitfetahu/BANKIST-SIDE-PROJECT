@@ -6,7 +6,7 @@ const navbar = document.querySelector(".navbar");
 Form.classList.add("hidden");
 
 
-console.log("Just a small testing ");
+console.log("Just a small testing  ");
 //logic when user wants to start the app a
 
 
