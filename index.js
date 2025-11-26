@@ -3,11 +3,12 @@ const Btn = document.querySelector("#Submit");
 const Sign = document.querySelector("#SIGNIN");
 const log = document.querySelector("#LOGIN");
 const navbar = document.querySelector(".navbar");
+const inputPassword = document.getElementById("password");
 Form.classList.add("hidden");
 
 
-console.log("Just a small testing  ");
-//logic when user wants to start the app a
+
+
 
 
 //when user clicks sign in
@@ -18,39 +19,47 @@ Sign.addEventListener("click", function () {
 
  
 });
+const ACCOUNTS = JSON.parse(localStorage.getItem("SIGNIN")) || [];
 
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
   const inputFirst = document.querySelector("#Fname").value;
   const inputLast = document.querySelector("#Lname").value;
-      //local storage name saved as an object
-  const PERSON = {
-    USER:{
-    firstName: inputFirst,
-    lastName: inputLast,
-    balance: 0,
-    },
-    Account : {
-    Depozita: 0,
-    Money: 10000,
-    Bilanci: 0,
+  
+  const AccInfo = {
+    firstname: inputFirst,
+    lastname: inputLast,
+    Password: inputPassword.value,
+    balance: 0
+
 }
-  };
 
-  const storingS = JSON.parse(localStorage.getItem("SIGNIN"));
+const existingAccount = ACCOUNTS.find(acc => 
+acc.firstname === inputFirst && acc.lastname === inputLast
 
-  if(storingS&& storingS.USER.firstName === inputFirst && storingS.USER.lastName === inputLast){
-alert("There is an account with this credentials");
+)
+if(existingAccount){
+alert("already exist")
 return;
 
-  }
-  // setting up the object in localstorage with the name SIGNIN
-  localStorage.setItem("SIGNIN", JSON.stringify(PERSON));
-  alert("account created");
+}
+else{
 
-  setTimeout(() => {
-    window.location.href = "login.html";
-  }, 3000);
+  ACCOUNTS.push(AccInfo);
+
+localStorage.setItem("SIGNIN", JSON.stringify(ACCOUNTS));
+   alert("account created");
+setTimeout(()=>{
+
+window.location.href ="login.html";
+
+}, 3000)
+}
+
+
+  
+
+
 });
 
 log.addEventListener("click", function () {

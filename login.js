@@ -4,9 +4,9 @@ const LOGin = document.querySelector("#LOGIN");
 
 LOGin.classList.add("hidden");
 
-// get data from localStorage
-const storedUser = JSON.parse(localStorage.getItem("SIGNIN"));
-console.log(storedUser);
+
+
+const ACCOUNTS = JSON.parse(localStorage.getItem("SIGNIN")) || [];
 
 SUBMIT.addEventListener("click", function (e) {
   e.preventDefault();
@@ -14,25 +14,33 @@ SUBMIT.addEventListener("click", function (e) {
   // we created these 2 variables bcs of inputs we had on login.html and this gets them and only shows theyr values in screen 
  const InputF = document.querySelector("#Fname").value.trim();
  const InputL = document.querySelector("#Lname").value.trim();
- 
- // first we use !storedUser to see if it works
+ const inputPassword = document.getElementById("Password").value;
+  //to see if it exist 
+ const testing = ACCOUNTS.find(arr => 
+arr.firstname === InputF && arr.lastname === InputL && arr.Password ===
+inputPassword
 
- if(!storedUser){
-alert("Please Log in ");
+)
+
+if(testing){
+
+alert("Please wait for verification!");
+setTimeout(()=>{
+window.location.href = "final.html";
+
+}, 3000)
+
+}
+
+else{
+alert("Wrong credentials");
 return;
- }
- 
- // then we compare if the object data that was stored in localstroage and then when we parsed from previus page we compare if its same 
-  if(InputF === storedUser.USER.firstName && InputL === storedUser.USER.lastName){
-alert("Please wait for verification")
-setTimeout(() => {window.location.href = "final.html"},3000);
 
- }
+}
 
- else{
-alert("INCORRECT CREDENTIALS");
 
- }
+// here was the windowlocation href to final.html
+
 
 
 });
