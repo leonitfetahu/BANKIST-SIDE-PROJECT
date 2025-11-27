@@ -44,6 +44,7 @@ body {
   font-weight: bold;
 }
 
+/* HIDDEN CLASS (keep this) */
 .hidden {
   display: none;
 }
