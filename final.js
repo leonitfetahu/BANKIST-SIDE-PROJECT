@@ -9,7 +9,7 @@ alert("verification completed");
 
 
 
-
+ 
  btnSend.addEventListener("click", function(){
 
 
