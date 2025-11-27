@@ -19,7 +19,22 @@ Sign.addEventListener("click", function () {
 
  
 });
-const ACCOUNTS = JSON.parse(localStorage.getItem("SIGNIN")) || [];
+let ACCOUNTS = [];
+
+try {
+  const parsed = JSON.parse(localStorage.getItem("SIGNIN"));
+  if (Array.isArray(parsed)) {
+    ACCOUNTS = parsed;
+  } else if (parsed && typeof parsed === "object") {
+    // old object → wrap in array
+    ACCOUNTS = [parsed];
+  } else {
+    ACCOUNTS = [];
+  }
+} catch (err) {
+  ACCOUNTS = [];
+}
+
 
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
