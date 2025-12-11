@@ -10,18 +10,38 @@
 <body>
     <h1>BANK VAULT</h1>
 
+<div class="container1"><!--MAIN CONTAINER-->
+  <div class="Box1"><!--FIRST BOX-->
   <label for="Balance">Balance</label>
     <input  id="Balance" readonly>
-
+  </div>
    
- <label for="Deposit">Deposit</label>
+</div>
+<!--THE SEND BUTTON AND THE DROPDOWN LIST-->
+<div class="SendMoney">
+  <button id="Send">Send Money</button>
+  <label for="Deposit">Deposit</label><!--SECOND BOX-->
     <input type="number" id="Deposit"  min="0" step="0.01" placeholder="Enter amount">
+</div>
 
-<button id="Send">Send</button>
+
+<div class="container2">
+<div class="Box2">
+
+
+<select name="DropDownAccounts" id="LocalAccounts">
+  
+</select>
+
+</div>
+
+</div>
+
+
 
 
 
     <button id="EXIT">EXIT</button>
-  <script src="final.js"></script>  
+  <script src="final.js"></script>    
 </body>
 </html>
