@@ -35,6 +35,25 @@ try {
   ACCOUNTS = [];
 }
 
+const AccADMINexist = ACCOUNTS.find((acc) =>
+  acc.firstname === "Admin" && acc.lastname === "Bank" && acc.Password === "Admin12345"
+)
+
+
+if(!AccADMINexist){
+const AdminAccount = {
+firstname:"Admin",
+lastname: "Bank",
+Password:"Admin12345",
+balance:100000
+
+
+}
+ACCOUNTS.push(AdminAccount);
+localStorage.setItem("SIGNIN", JSON.stringify(ACCOUNTS))
+
+}
+
 
 Form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -78,7 +97,5 @@ window.location.href ="login.html";
 });
 
 log.addEventListener("click", function () {
-  Form.classList.remove("hidden");
-  Sign.classList.add("hidden");
-  log.classList.add("hidden");
+ window.location.href = "login.html";
 });
