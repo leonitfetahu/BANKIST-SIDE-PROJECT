@@ -3,7 +3,6 @@ const balanceInput = document.querySelector("#Balance");
 const depositInput = document.querySelector("#Deposit"); 
 const btnSend = document.querySelector("#Send"); //send money button
 const HiddenContainer = document.querySelector(".container2");
-const SecondSend = document.querySelector("#Send2button")
 const DropDownList = document.querySelector("#LocalAccounts"); //the drop down list
 // alert("verification completed");
 HiddenContainer.style.display = "none";
